@@ -1,0 +1,58 @@
+[
+  {
+    "itemname": "Calla Lily",
+    "description": "Elegant flowers with a sleek modern look, easy to maintain indoors.",
+    "image": "CallaLily.jpg",
+    "price": 79,
+    "category": "Indoor Plant"
+  },
+  {
+    "itemname": "Hoya Heart",
+    "description": "A cute heart-shaped succulent, perfect for desks and small spaces.",
+    "image": "HoyaHeart.jpg",
+    "price": 39,
+    "category": "Indoor Plant"
+  },
+  {
+    "itemname": "Money Tree",
+    "description": "Believed to bring good luck and fortune, great for home and office.",
+    "image": "MoneyTree.jpg",
+    "price": 169,
+    "category": "Indoor Plant"
+  },
+  {
+    "itemname": "Peace Lily",
+    "description": "Beautiful white blooms and strong air-purifying qualities.",
+    "image": "PeaceLily.jpg",
+    "price": 69,
+    "category": "Indoor Plant"
+  },
+  {
+    "itemname": "Red Prayer Plant",
+    "description": "Unique red-veined leaves that fold at night like praying hands.",
+    "image": "RedPrayer.jpg",
+    "price": 59,
+    "category": "Indoor Plant"
+  },
+  {
+    "itemname": "Sansevieria",
+    "description": "Also known as Snake Plant, very hardy and low maintenance.",
+    "image": "Sansevieria.jpg",
+    "price": 79,
+    "category": "Indoor Plant"
+  },
+  {
+    "itemname": "Spider Plant",
+    "description": "Fast-growing, easy-care plant with long arching leaves.",
+    "image": "SpiderPlant.jpg",
+    "price": 69,
+    "category": "Indoor Plant"
+  },
+  {
+    "itemname": "ZZ Plant",
+    "description": "Extremely tough plant with shiny green leaves, thrives on neglect.",
+    "image": "ZZPlant.jpg",
+    "price": 69,
+    "category": "Indoor Plant"
+  }
+]

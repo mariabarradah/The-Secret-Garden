@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="center">
+        <h1>register</h1>
+        <hr>
+        <form action="home.html" id="form">
+
+
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" placeholder="Enter your username" maxlength="12" required
+                class="eleC">
+            <br>
+            <label id="l1" for="password">Password:</label><br>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required
+                class="eleC">
+            <br>
+            <label id="l2" for="password2">Confirm Password:</label><br>
+            <input type="password" id="password2" name="password2" placeholder="Confirm your password" required
+                class="eleC">
+            <br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required class="eleC">
+            <br>
+            <label for="age">Age:</label><br>
+            <input type="number" id="age" min="11" placeholder="Enter your age" required class="eleC">
+            <br>
+            <label for="bd">Date of birth:</label><br>
+            <input type="date" id="bd" required>
+            <br>
+            <label id="lAgree" for="ckagree">I agree to the terms</label>
+            <input type="checkbox" id="ckagree" name="ckagree" >
+            <br><br>
+            <div class="d-flex justify-content-between">
+                <input type="submit" id="Sbutton" value="Submit" class="btn btn-success">
+                <input type="reset" id="Cbutton" value="Clear" class="btn btn-danger">
+            </div>
+
+
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("form").onsubmit = function (e) {
+            
+            let password1 = document.getElementById("password");
+            let password2 = document.getElementById("password2");
+            let agree = document.getElementById("ckagree");
+
+            let label1 = document.getElementById("l1");
+            let label2 = document.getElementById("l2");
+            let lAgree = document.getElementById("lAgree");
+
+
+            
+            label1.style.color = "";
+            label2.style.color = "";
+            lAgree.style.color = "black";
+
+            
+            if (password1.value !== password2.value) {
+                alert("Passwords do not match!");
+                label1.style.color = "red";
+                label2.style.color = "red";
+                e.preventDefault();
+                return;
+            }
+
+            
+            if (!agree.checked) {
+                alert("You must agree to the terms!");
+                lAgree.style.color = "red";
+                e.preventDefault();
+            }
+
+        };
+    </script>
+</body>
+
+</html>

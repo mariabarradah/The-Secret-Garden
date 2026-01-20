@@ -1,0 +1,44 @@
+body{
+    background-image: url('images/background.jpg');
+    background-size: cover;
+
+
+}
+.center{
+    width: 500px;
+    padding: 30px;
+    height: 500PX auto;
+    margin: 100px auto;
+
+    background-color: rgba(186, 254, 187, 0.562);
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgb(182, 182, 182);
+}
+h1{
+   text-align: center;
+}
+
+.eleC{
+    width: 100%;
+}
+#Sbutton{
+    
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 45%;
+}
+#Sbutton:hover{
+    background-color: darkgreen;
+}
+#Cbutton{
+    
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 45%;
+}
+#Cbutton:hover{
+    background-color: rgb(100, 0, 0);
+}
+

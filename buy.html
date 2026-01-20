@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="styleS.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-light navbar-light fixed-top ">
+        <a class="navbar-brand" href="home.html">The secret garden</a>
+        <img src="images/logo1.jpg" class="rounded-circle" height="50px" width="50px">
+
+        <ul class="navbar-nav">
+            <li class="nav-item" active>
+                <a class="nav-link" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="product.html">Our Products</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="search.html">Search Product</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="buy.html">Buy</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="cart.html">MyCart</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="login.html">logout</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container text-center">
+        <h1 class="text-center ">Buy</h1>
+        <hr>
+        <br>
+        <div class="row ">
+            <div class="col-md-6 d1">
+                <div class="form-group">
+                    <label>
+                        <h3>Total</h3>
+                    </label>
+                    <hr>
+
+                    <div id="totalBox"></div>
+
+
+                    <div class="form-group payment-icons text-center">
+                        <input type="radio" name="pay" value="visa" checked>
+                        <img width="60px" src="images/pay1.jpg" />
+                        <input type="radio" name="pay" value="apple">
+                        <img width="60px" src="images/pay2.jpg" />
+                    </div>
+                    <br><br>
+                    <div class="form-group">
+                        <textarea class="form-control" rows="6" placeholder="Enter Your comment..."></textarea>
+                    </div>
+                    <button class="btn btn-success" onclick="submitOrder()">Submit</button>
+                </div>
+            </div>
+            <div class="col-md-6 ">
+                <video id="video" controls width="480" height="360">
+                    <source src="video.mp4" type="video/mp4">
+                </video>
+            </div>
+
+            <form id="goHome" action="home.html"></form>
+        </div>
+        <script>
+
+            document.getElementById("totalBox").innerHTML = localStorage.getItem("total") + " SAR";
+
+            function submitOrder() {
+                let pMethod = "";
+                let p = document.getElementsByName("pay");
+
+                for (let i = 0; i < p.length; i++) {
+                    if (p[i].checked) {
+                        pMethod = p[i].value;
+                    }
+                }
+                let tot = localStorage.getItem("total");
+                let confirmMsg = "Total = " + tot + " using " + pMethod + " ,Are you sure?";
+                let sure = confirm(confirmMsg);
+
+                if (sure) {
+
+                    document.getElementById("goHome").submit();
+
+                }
+            }
+        </script>
+</body>
+
+</html>

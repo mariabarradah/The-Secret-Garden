@@ -1,0 +1,13 @@
+body{
+    background-color: #f9f2e7;
+}
+.te{
+    color: darkgreen;
+}
+.products:hover {
+    transform: scale(1.1);
+}
+footer{
+    background-color: #224229;
+    color: #f9f2e7;
+}

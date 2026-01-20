@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+    <div class="center">
+        <h1>login</h1>
+        <hr>
+        <form action="home.html" id="loginForm">
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username" maxlength="12" placeholder="Enter your username" required
+                class="eleC">
+            <br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required
+                class="eleC">
+            <br><br>
+
+            <input type="submit" value="submit" id="Sbutton" class="btn btn-success">
+            <br>
+            <label for="ckremember">remember me </label>
+            <input type="checkbox" id="ckremember" name="ckremember">
+
+            <a href="register.html">Don't have an account? Register here</a>
+        </form>
+    </div>
+
+    <script>
+
+        if (localStorage.getItem("username") != null) {
+            document.getElementById("username").value = localStorage.getItem("username");
+            document.getElementById("password").value = localStorage.getItem("password");
+           document.getElementById("ckremember").checked = true;
+        }
+
+        document.getElementById("loginForm").onsubmit = async function (e) {
+            e.preventDefault();
+
+            let u_username = document.getElementById("username").value;
+            let u_password = document.getElementById("password").value;
+            let matched = false;
+
+            let res = await fetch("users.json");
+            let users = await res.json();
+
+            for (let i = 0; i < users.length; i++) {
+                if (users[i].username == u_username && users[i].password == u_password) {
+                    matched = true;
+                }
+            }
+
+            if (matched) {
+                if (ckremember.checked == true) {
+                    localStorage.setItem("username", u_username);
+                    localStorage.setItem("password", u_password);
+                } else {
+                    localStorage.clear();
+                }
+                localStorage.setItem("name", u_username);
+                document.getElementById("loginForm").submit();
+            }else{
+                 alert("invalid username or password");
+            }
+
+        };
+        
+    </script>
+
+</body>
+
+</html>
